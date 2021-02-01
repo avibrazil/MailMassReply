@@ -97,6 +97,10 @@ Here is a list of tokens that can be used throughout the message body (as `{{tok
 <p>So I'll use them to create a personalized phrase like this:</p>
 
 <p>This is a reply to a message from {from}, sent on {date} to {to} and asking for reply on {replyto}.<p>
+<p>Click on <a href="https://some.domain.com/deep/link?unique={hash}">this link</a> so I'll know you interacted with this message.</p>
+<p>Or just let the following image load in your e-mail viewer and I'll know you opened my reply:<p>
+<img src=""https://some.domain.com/image.png?unique={hash}""/>
+<p>Then I'll look into the HTTP access logs of `some.domain.com` web server and if your hash appears, I'll know you interacted with my reply.</p>
 
 <p>Best,<br/>
 Avi Alkalay</p>
