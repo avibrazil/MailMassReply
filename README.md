@@ -47,6 +47,67 @@ The `MailMassReply` class gets a long list of parameters becase it automates a l
 
 See [example-usage.ipynb] Jupyter notebook for more.
 
+## Example of reply templates
+
+Templates are the engine for personalized replys.
+Templates can be HTML or TXT or both. This is how reply templates look like:
+
+A template for a pure text reply:
+<pre>
+Hello {sendername}
+
+This message was sent to you because your message to me was put into an IMAP folder on the recepient.
+
+Here is a list of tokens that can be used throughout the message body (as `{{token}}`) that were extracted from the original message:
+
+- from
+- date
+- to
+- replyto
+- sendername
+- subject
+- hash - unique hash calculated from sender, date, subject; can be used on links to track interactions.
+
+So I'll use them to create a personalized phrase like this:
+
+This is a reply to a message from {from}, sent on {date} to {to} and asking for reply on {replyto}.
+
+Best,
+Avi Alkalay</pre>
+
+And a template for an HTML reply:
+
+```html
+<p>Hello {sendername}</p>
+
+<p>This message was sent to you because your message to me was put into an IMAP folder on the recepient.</p>
+
+Here is a list of tokens that can be used throughout the message body (as `{{token}}`) that were extracted from the original message:
+
+<ul>
+    <li>from</li>
+    <li>date</li>
+    <li>to</li>
+    <li>replyto</li>
+    <li>sendername</li>
+    <li>subject</li>
+    <li>hash - unique hash calculated from sender, date, subject; can be used on links to track interactions.</li>
+</ul>
+
+<p>So I'll use them to create a personalized phrase like this:</p>
+
+<p>This is a reply to a message from {from}, sent on {date} to {to} and asking for reply on {replyto}.<p>
+
+<p>Best,<br/>
+Avi Alkalay</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+```
+
 ## Donate if you think I deserve
 
 Please consider donation of any amount in Bitcoin or Ethereum:
