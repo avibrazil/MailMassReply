@@ -1,0 +1,20 @@
+Hello {sendername}
+
+This message was sent to you because your message to me was put into an IMAP folder on the recepient.
+
+Here is a list of tokens that can be used throughout the message body (as `{{token}}`) that were extracted from the original message:
+
+- from
+- date
+- to
+- replyto
+- sendername
+- subject
+- hash - unique hash calculated from sender, date, subject; can be used on links to track interactions.
+
+So I'll use them to create a personalized phrase like this:
+
+This is a reply to a message from {from}, sent on {date} to {to} and asking for reply on {replyto}.
+
+Best,
+Avi Alkalay
